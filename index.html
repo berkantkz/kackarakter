@@ -1,0 +1,86 @@
+<html>
+
+<head>
+	<title>Karakter sayacı</title>
+	<meta property="og:title" content="Karakter sayacı" />
+	<meta name="author" content="berkantkz" />
+	<meta property="og:locale" content="tr_TR" />
+	<meta name="description" content="Karakter sayma aracı" />
+	<meta property="og:description" content="Karakter sayma aracı" />
+	<link rel="canonical" href="https://berkantkz.github.io/" />
+	<meta property="og:url" content="https://berkantkz.github.io/" />
+	<meta property="og:site_name" content="Karakter sayacı" />
+	<link rel="shortcut icon" href="/kz.png" type="image/x-icon" />
+	
+	<meta name="keywords" content="harf, kelime, sözcük, sayaç, kaç harfli, harf sayma" />
+	<meta http-equiv=“Pragma” content=”no-cache”>
+	
+	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+	
+	<style>
+		html {
+			/* min-height: 420px; */
+		}
+		
+		body {
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			/* min-height: 415px; */
+			display: flex;
+			align-items: center;
+		}
+		
+		.container {
+			height: 80vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+			flex: 1 1 auto;
+		}
+		
+		.counter-container {
+			display: flex;
+			flex-direction: row;
+			flex: 1 1 auto;
+			width: 100%;
+			align-items: center;
+			margin-bottom: 30px;
+		}
+		
+		.counter-container > * {
+			flex: 1 0 auto;
+			margin-left: 30px;
+			margin-right: 30px;
+		}
+		
+		.container .counter-container textarea {
+			max-height: 50%;
+			min-height: 30%;
+			border: 0.8px solid #4e4d4d;
+			border-radius: 10px;
+		}
+		
+		.container .counter-container .length {
+			font-size: 25pt;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div style="text-align: center"><h2>KARAKTER SAYACI</h2><p><em>berkantkz</em></p></div>
+		<div class="counter-container">
+			<textarea id="input" onkeyup="$('#counter').text($(this)[0].value.length)" type="text" placeholder="Metni girin"></textarea>
+			<div style="text-align: center">
+				<h2>Karakter sayısı:</h2>
+				<span id="counter" class="length">0</span>
+			</div>
+		</div>
+		<a href="/">berkantkz.github.io</a>
+	</div>
+</body>
+
+</html>

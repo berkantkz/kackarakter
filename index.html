@@ -49,18 +49,17 @@
 		}
 		
 		.container {
-			height: 80vh;
+			height: 90%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			padding: 20px;
 			flex: 1 1 auto;
 			z-index: 1;
 		}
 		
 		.counter-container {
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			flex: 1 1 auto;
 			width: 100%;
 			align-items: center;
@@ -69,19 +68,32 @@
 		
 		.counter-container > * {
 			flex: 1 0 auto;
-			margin-left: 30px;
-			margin-right: 30px;
+		}
+		
+		.container .counter-container .info-container {
+			text-align: center; 
+			display: flex; 
+			min-width: 60%;
+			flex: 1;
+		}
+		
+		.container .counter-container .info-container > * {
+			flex: 1 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 		}
 		
 		.container .counter-container textarea {
 			max-height: 50%;
 			min-height: 30%;
+			min-width: 60%;
 			padding: 10px;
 			border: 0.8px solid #fff;
 			border-radius: 10px;			
 			background: #b3b3b333;
 			color: white;
-			resize: vertical;
+			resize: horizontal;
 			font-family: 'Raleway', sans-serif;
 			outline: 0;
 		}
@@ -111,18 +123,21 @@
 <body>
 	<div class="cover"></div>
 	<div class="container">
-		<div style="text-align: center"><h2>KARAKTER SAYACI</h2><p><em>berkantkz</em></p></div>
+		<div style="text-align: center"><h2>KARAKTER SAYACI</h2></div>
 		<div class="counter-container">
-			<textarea id="input" onkeyup="$('#char_counter').text($(this)[0].value.length); if ($(this)[0].value == '') {$('#word_counter').text('0');} else {$('#word_counter').text($('#input')[0].value.trim().split(/\s+/).length)};" type="text" placeholder="Metni girin"></textarea>
-			<div style="text-align: center">
-				<h2>Karakter sayısı:</h2>
-				<span id="char_counter" class="length">0</span>
-				
-				<h2>Sözcük sayısı:</h2>
-				<span id="word_counter" class="length">0</span>
+			<div class="info-container">
+				<div>
+					<h2>Karakter sayısı</h2>
+					<span id="char_counter" class="length">0</span>
+				</div>
+				<div>
+					<h2>Sözcük sayısı</h2>
+					<span id="word_counter" class="length">0</span>
+				</div>
 			</div>
+			<textarea id="input" onkeyup="$('#char_counter').text($(this)[0].value.length); if ($(this)[0].value == '') {$('#word_counter').text('0');} else {$('#word_counter').text($('#input')[0].value.trim().split(/\s+/).length)};" type="text" placeholder="Metni girin"></textarea>
 		</div>
-		<a href="/">berkantkz.github.io</a>
+		<div style="width: 60%; text-align: center;"><em>berkantkz</em> | <a href="/">berkantkz.github.io</a></div>
 	</div>
 </body>
 
